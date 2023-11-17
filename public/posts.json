@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "title": "A Changing World Order",
+    "description": "The world is changing at a feverish pace. Friend , collegues and everyone engaged in knowledge work are beginning to sense this,including",
+    "author": "anujghosalia",
+    "date": "August 2",
+    "readTime": 8,
+    "views": 200
+  },
+  {
+    "id": 2,
+    "title": "India Vs Australia",
+    "description": "Think about it - this cricket series was akin to therapy. Laying our childhood trauma up top, working with it slowly and slowly over two",
+    "author": "anujghosalia",
+    "date": "January 21",
+    "readTime": 1,
+    "views": 156
+  },
+  {
+    "id": 3,
+    "title": "Write to build",
+    "description": "Writing is the first step to create:  - stories -products -companies",
+    "author": "anujghosalia",
+    "date": "November 18",
+    "readTime": 1,
+    "views": 228
+  }
+]
