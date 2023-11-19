@@ -104,7 +104,13 @@ const ProfileSocialLinks = styled.a`
   color: #3f9eed;
   cursor: pointer;
 `;
+export const Bio = styled.p`
+  font-size: 0.9rem;
 
+  @media (max-width: 280px) {
+    font-size: 0.8rem;
+  }
+`;
 const Profile = ({ userDetails }) => {
   return (
     <ProfileContainer>
@@ -190,7 +196,7 @@ const Profile = ({ userDetails }) => {
         </ProfileImageNameWrapper>
 
         <AboutUser>
-          <p style={{ fontSize: "14px" }}>{userDetails?.bio}</p>
+          <Bio>{userDetails?.bio}</Bio>
           <ProfileSocialLinks
             href={userDetails?.socialLink}
             target="_blank"

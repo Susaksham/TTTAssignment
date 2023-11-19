@@ -17,14 +17,28 @@ const EngagementStatsStyle = styled.div`
 
 const EngagementStatsImageContainer = styled.div`
   position: relative;
-  width: 0.9rem;
-  height: 0.9rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  @media (max-width: 280px) {
+    width: 1rem;
+    height: 1rem;
+  }
 `;
 const EngagementStatsItem = styled.span`
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.4rem;
+  font-size: 1rem;
+  @media (max-width: 280px) {
+    font-size: 16px;
+  }
+`;
+
+const EngagementStatsItemText = styled.span`
+  @media (max-width: 280px) {
+    font-size: 12px;
+  }
 `;
 function EngagementStats({ userDetails }) {
   return (
@@ -49,7 +63,9 @@ function EngagementStats({ userDetails }) {
             sizes="(max-width: 1400px) 10vw"
           />{" "}
         </EngagementStatsImageContainer>
-        {userDetails?.engagementStats?.likes}
+        <EngagementStatsItemText>
+          {userDetails?.engagementStats?.likes}
+        </EngagementStatsItemText>
       </EngagementStatsItem>
       <EngagementStatsItem>
         <EngagementStatsImageContainer>
@@ -60,7 +76,10 @@ function EngagementStats({ userDetails }) {
             sizes="(max-width: 1400px) 10vw"
           />{" "}
         </EngagementStatsImageContainer>
-        {userDetails?.engagementStats?.views}
+        <EngagementStatsItemText>
+          {" "}
+          {userDetails?.engagementStats?.views}
+        </EngagementStatsItemText>
       </EngagementStatsItem>
       <EngagementStatsItem>
         <EngagementStatsImageContainer>
@@ -71,7 +90,9 @@ function EngagementStats({ userDetails }) {
             sizes="(max-width: 1400px) 10vw"
           />{" "}
         </EngagementStatsImageContainer>
-        {userDetails?.engagementStats?.hearts}
+        <EngagementStatsItemText>
+          {userDetails?.engagementStats?.hearts}
+        </EngagementStatsItemText>
       </EngagementStatsItem>
     </EngagementStatsStyle>
   );
