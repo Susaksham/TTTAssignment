@@ -4,46 +4,67 @@ import styled from "styled-components";
 import Post from "../Post/Post";
 
 export const PostContainer = styled.div`
+  position: relative;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
+  border-top: 1px solid #c5c5c5;
+  margin-top: 1rem;
 `;
-const Posts = () => {
-  const [allPost, setAllPost] = useState([]);
-  const fetchPost = async () => {
-    try {
-      const response = await fetch("posts.json");
 
-      const post = await response.json();
-      console.log(post);
-      setAllPost(post);
-      console.log(allPost);
-    } catch (err) {
-      console.log(err);
-    }
-  };
+export const TotalPost = styled.div`
+  position: absolute;
+  left: 0;
+  width: 30vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 2px solid #c5c5c5;
+  border-right: 2px solid #c5c5c5;
+  top: calc(-3rem - 3.8px);
+  z-index: 10;
+  background-color: #ffffff;
+  padding: 1rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #3f9eed;
+  @media (max-width: 280px) {
+    font-size: 0.83rem;
+    top: calc(-3rem - 0.1px);
+  }
+`;
 
-  console.log("all Posts are ", allPost);
-
-  useEffect(() => {
-    fetchPost();
-  }, []);
+// export const TotalPost = styled.div`
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+// `;
+const Posts = ({ posts }) => {
   return (
     <PostContainer>
-      {allPost.map((post, idx) => {
-        return (
-          <Post
-            title={post.title}
-            description={post.description}
-            author={post.author}
-            date={post.date}
-            readTime={post.readTime}
-            views={post.views}
-            key={idx}
-          ></Post>
-        );
-      })}
+      <TotalPost>
+        <span>{posts.length} Posts</span>
+      </TotalPost>
+      {posts ? (
+        posts.map((post, idx) => {
+          return (
+            <Post
+              title={post.title}
+              description={post.description}
+              author={post.author}
+              date={post.date}
+              readTime={post.readTime}
+              views={post.views}
+              key={idx}
+              thought={post.thought}
+            ></Post>
+          );
+        })
+      ) : (
+        <p>Posts loading...</p>
+      )}
     </PostContainer>
   );
 };

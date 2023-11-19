@@ -2,48 +2,129 @@
 
 import React from "react";
 import styled from "styled-components";
+import Image from "next/image";
+import Like from "../../../../public/like.png";
 export const PostContainer = styled.div`
   display: flex;
   flex-direction: column;
-
   justify-content: space-evenly;
-  padding: 1rem 1rem;
+  padding: 2rem 0.8rem;
   gap: 2rem;
+  border-top: 1px solid #c5c5c5;
+  max-width: 48rem;
+  width: 100vw;
+  @media (max-width: 280px) {
+    padding: 1rem 0.4rem;
+  }
 `;
 
 export const LikeButton = styled.span``;
-export const Title = styled.h2``;
+export const Title = styled.h2`
+  font-size: 16px;
+  font-weight: 800;
+
+  @media (max-width: 280px) {
+    font-size: 12px;
+  }
+`;
 
 export const Dot = styled.span`
-  width: 0.5rem;
-  height: 0.5rem;
+  width: 0.2rem;
+  height: 0.2rem;
   border-radius: 100%;
-  background-color: green;
+  background-color: #989898;
+  margin-inline: 0.25rem;
 `;
 
 export const PostInfo = styled.div`
-  display: inline;
+  display: flex;
+  align-items: center;
+  color: #989898;
+  font-size: 10px;
 `;
-
+export const Description = styled.div`
+  @media (max-width: 280px) {
+    font-size: 12px;
+  }
+`;
 export const BottomInfo = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
 `;
-const Post = ({ title, description, author, date, readTime, views }) => {
+
+export const BottomAuthorItem = styled.span`
+  font-size: 10px;
+  font-weight: 600;
+  color: ${(props) => (props.color ? props.color : "#4e4e4e")};
+  @media (max-width: 280px) {
+    font-size: 62.5%;
+    font-weight: 600;
+    color: #4e4e4e;
+    color: ${(props) => (props.color ? props.color : "#4e4e4e")};
+  }
+`;
+export const BottomInfoItem = styled.span`
+  font-size: 10px;
+  font-weight: 600;
+  color: "#4e4e4e";
+  @media (max-width: 280px) {
+    font-size: 72.5%;
+    font-weight: 600;
+    color: #4e4e4e;
+  }
+`;
+const Post = ({
+  title,
+  description,
+  author,
+  date,
+  readTime,
+  views,
+  thought,
+}) => {
+  console.log(description);
   return (
     <PostContainer>
-      <div>
-        <Title> {title}</Title>
-        <LikeButton></LikeButton>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
+        <Title>{title}</Title>
+        <LikeButton>
+          <Image src={Like} alt="like" width={15} height={15} />
+        </LikeButton>
       </div>
-      <p>{description}</p>
+      <Description>
+        {description.split("\n").map((line, index) => (
+          <React.Fragment key={index}>
+            {line}
+            <br />
+          </React.Fragment>
+        ))}
+      </Description>
+
+      {/* <div
+        style={{ fontSize: "14px", color: "#4e4e4e" }}
+        dangerouslySetInnerHTML={{ __html: description }}
+      ></div> */}
       <BottomInfo>
-        <span>{author}</span>
+        <div style={{ display: "flex", gap: "0.15rem" }}>
+          <BottomAuthorItem color="#3f9eed">{thought}</BottomAuthorItem>
+          <BottomAuthorItem>By</BottomAuthorItem>
+          <BottomAuthorItem style={{}}>{author}</BottomAuthorItem>
+        </div>
         <PostInfo>
-          <span>{readTime} min</span>
+          <BottomInfoItem>
+            {date.month} {date.day}
+          </BottomInfoItem>
           <Dot></Dot>
-          <span>{views} Views</span>
+          <BottomInfoItem>{readTime}min Read</BottomInfoItem>
+          <Dot></Dot>
+          <BottomInfoItem>{views} Views</BottomInfoItem>
         </PostInfo>
       </BottomInfo>
     </PostContainer>

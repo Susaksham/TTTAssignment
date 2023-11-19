@@ -7,9 +7,13 @@ export const Nav = styled.nav`
   display: flex;
   width: 100%;
   height: fit-content;
-  background-color: black;
+  background-color: #111111;
   padding: 1rem 2rem;
   justify-content: space-between;
+
+  @media (max-width: 280px) {
+    padding: 1rem 1rem;
+  }
 `;
 
 export const LogoContainer = styled.div`
@@ -25,8 +29,9 @@ export const LogoContainer = styled.div`
 
 export const Heading = styled.h2`
   color: #f6f6f6;
-  font-weight: 400;
-  font-size: 100%;
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 4px;
 `;
 export const logoText = styled.h2`
   color: #f6f6f6;
@@ -39,9 +44,9 @@ export const LogoWrapper = styled.div`
   gap: 0.4rem;
 `;
 export const LogoLine = styled.div`
-  background-color: white;
+  background-color: #ffc23e;
   height: 100%;
-  width: 0.1rem;
+  width: 1px;
 `;
 const NavBar = () => {
   return (

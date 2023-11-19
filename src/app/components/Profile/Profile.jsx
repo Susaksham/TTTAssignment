@@ -1,13 +1,15 @@
 import React from "react";
 import styled from "styled-components";
-
 import Image from "next/image";
+import Diamond from "../../../../public/diamond.png";
+import Approve from "../../../../public/approved.png";
+import EngagementStats from "../EngagementStats/EngagementStats";
 export const ProfileWrapper = styled.main``;
 export const ProfileContainer = styled.div`
   width: 100%;
   height: 50vh;
   position: relative;
-  /* background-color: green; */
+  margin-bottom: 1.5rem;
 `;
 export const ImageContainer = styled.div`
   width: 100%;
@@ -23,13 +25,18 @@ export const ProfileInfoContainer = styled.div`
 
   position: absolute;
   z-index: 100;
-  top: 35%;
-  left: 10%;
+  top: 33%;
+  left: 10vw;
   display: flex;
   flex-direction: column;
   align-items: start;
 
-  gap: 1rem;
+  gap: 2rem;
+
+  @media (max-width: 280px) {
+    left: 4vw;
+    top: 35%;
+  }
 `;
 
 export const ProfileImageContainer = styled.div`
@@ -39,6 +46,10 @@ export const ProfileImageContainer = styled.div`
   overflow: hidden;
   border-radius: 100%;
   object-fit: contain;
+  border: 1.5px solid #111111;
+  @media (max-width: 280px) {
+    height: 10vh;
+  }
 `;
 
 export const ProfileImageNameWrapper = styled.div`
@@ -49,9 +60,29 @@ export const ProfileImageNameWrapper = styled.div`
 export const ImageNameContainer = styled.div`
   display: flex;
 `;
+
+export const MembershipIconsContainer = styled.div`
+  position: relative;
+  width: 15px;
+  height: 15px;
+  @media (max-width: 280px) {
+    width: 12px;
+    height: 12px;
+  }
+`;
 export const FollowStats = styled.div`
   display: flex;
   gap: 0.5rem;
+`;
+
+export const FollowStatsItem = styled.span`
+  border: 1.5px solid #989898;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1px 6px;
+  font-weight: 500;
 `;
 
 export const UserInfo = styled.div`
@@ -65,60 +96,109 @@ export const UserInfo = styled.div`
 export const AboutUser = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  gap: 0.2rem;
 `;
 const ProfileSocialLinks = styled.a`
   text-decoration: none;
+  font-size: 12px;
+  color: #3f9eed;
+  cursor: pointer;
 `;
 
-const EngagementStats = styled.div``;
-const Profile = () => {
+const Profile = ({ userDetails }) => {
   return (
     <ProfileContainer>
       <ImageContainer>
         <Image
-          src={"/backgroundImage.jpg"}
-          alt="background image"
+          src={
+            Object.keys(userDetails).length > 0
+              ? userDetails?.backgroundImage?.src
+              : "/NO_IMAGE.jpg"
+          }
+          alt={
+            Object.keys(userDetails).length > 0
+              ? userDetails?.backgroundImage?.alt
+              : "Image not Available"
+          }
           fill={true}
+          sizes="(max-width: 1400px) 100vw"
+          priority={true}
         ></Image>
       </ImageContainer>
       <ProfileInfoContainer>
         <ProfileImageNameWrapper>
           <ProfileImageContainer>
             <Image
-              src={"/backgroundImage.jpg"}
-              alt="profile image"
+              src={
+                Object.keys(userDetails).length > 0
+                  ? userDetails?.profileImage?.src
+                  : "/no_profile_image.png"
+              }
+              alt={
+                Object.keys(userDetails).length > 0
+                  ? userDetails?.profileImage?.alt
+                  : "No image available"
+              }
               fill={true}
+              sizes="(max-width: 1400px) 33vw"
             ></Image>
           </ProfileImageContainer>
 
           <UserInfo>
-            <div>
-              <h2>Anuj gosalia</h2>
+            <div style={{ display: "flex", alignItems: "center", gap: "2vw" }}>
+              <span style={{ fontSize: "1rem", fontWeight: "600" }}>
+                {userDetails?.name}
+              </span>
+              <span
+                style={{ display: "flex", alignItems: "center", gap: "0.2rem" }}
+              >
+                <MembershipIconsContainer>
+                  <Image src={Diamond} alt="diamond-member" fill={true} />
+                </MembershipIconsContainer>
+                <MembershipIconsContainer>
+                  <Image src={Approve} alt="approved-member" fill={true} />
+                </MembershipIconsContainer>
+              </span>
             </div>
             <FollowStats>
-              <div>
-                <span>6482</span>
-                <span></span>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  color: "#989898",
+                }}
+              >
+                <FollowStatsItem>
+                  {userDetails?.followStats?.followers}
+                </FollowStatsItem>
+                <span style={{ fontSize: "10px" }}>Followers</span>
               </div>
-              <div>
-                <span>245</span>
-                <span></span>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  color: "#989898",
+                }}
+              >
+                <FollowStatsItem>
+                  {userDetails?.followStats?.following}
+                </FollowStatsItem>
+                <span style={{ fontSize: "10px" }}>Following</span>
               </div>
             </FollowStats>
           </UserInfo>
         </ProfileImageNameWrapper>
 
         <AboutUser>
-          <p>Co-founder & CEO at Terribly Tiny Tales</p>
+          <p style={{ fontSize: "14px" }}>{userDetails?.bio}</p>
           <ProfileSocialLinks
-            href="http://www.instagram.com/anujgosalia"
+            href={userDetails?.socialLink}
             target="_blank"
             rel="noopener noreferrer"
           >
-            http://www.instagram.com/anujgosalia
+            {userDetails?.socialLink}
           </ProfileSocialLinks>
-          <EngagementStats></EngagementStats>
+          <EngagementStats userDetails={userDetails}></EngagementStats>
         </AboutUser>
       </ProfileInfoContainer>
     </ProfileContainer>
