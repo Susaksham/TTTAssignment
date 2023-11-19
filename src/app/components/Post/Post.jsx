@@ -18,7 +18,15 @@ export const PostContainer = styled.div`
   }
 `;
 
-export const LikeButton = styled.span``;
+export const LikeButton = styled.span`
+  position: relative;
+  width: 1.4rem;
+  height: 1.4rem;
+  @media (max-width: 280px) {
+    width: 1rem;
+    height: 1rem;
+  }
+`;
 export const Title = styled.h2`
   font-size: 16px;
   font-weight: 800;
@@ -83,7 +91,6 @@ const Post = ({
   views,
   thought,
 }) => {
-  console.log(description);
   return (
     <PostContainer>
       <div
@@ -95,7 +102,7 @@ const Post = ({
       >
         <Title>{title}</Title>
         <LikeButton>
-          <Image src={Like} alt="like" width={15} height={15} />
+          <Image src={Like} alt="like" fill={true} />
         </LikeButton>
       </div>
       <Description>

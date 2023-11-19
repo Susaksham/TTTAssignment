@@ -15,13 +15,12 @@ export default function Home() {
       const response = await fetch("user.json");
 
       const user = await response.json();
-      console.log(user);
+
       setUserDetails(user);
       setLoading(false);
-      console.log(userDetails);
     } catch (err) {
       console.log(err);
-      setLoading(false);
+      throw new Error("Something went wrong");
     }
   };
 
