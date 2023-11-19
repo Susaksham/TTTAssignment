@@ -1,36 +1,98 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js Project with Styled Components
 
-## Getting Started
+This Next.js project leverages styled components for a seamless styling experience and is comprised of five key components:
 
-First, run the development server:
+1. **NavBar**
+2. **Profile**
+3. **Posts**
+4. **Post**
+5. **EngagementStats**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+The page.js file orchestrates the three primary components:
+
+1. **NavBar**
+2. **Profile**
+3. **Posts**
+
+## Data Structure
+
+User information is fetched from the **user.json** file, populating the **userDetails** state in **page.js**. The user data follows this structure:
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+{
+  "id": "1",
+  "backgroundImage": {
+    "src": "/backgroundImage.jpg",
+    "alt": "background image"
+  },
+  "profileImage": { "src": "/profileImageSecond.jpeg", "alt": "profile image" },
+  "name": "Anuj Gosalia",
+  "followStats": {
+    "followers": 6482,
+    "following": 245
+  },
+  "bio": "Co-founder & CEO at Terribly Tiny Tales",
+  "socialLink": "http://www.instagram.com/anujgosalia",
+  "engagementStats": {
+    "stars": "1k",
+    "likes": "1.3k",
+    "views": "13k",
+    "hearts": "23k"
+  },
+  "posts": [
+    {
+      "id": 1,
+      "title": "A Changing World Order",
+      "description": "The world is changing at a feverish pace. Friend, colleagues, and everyone engaged in knowledge work are beginning to sense this including.",
+      "thought": "musing",
+      "author": "anujghosalia",
+      "date": {
+        "month": "August",
+        "day": 2
+      },
+      "readTime": 8,
+      "views": 200
+    },
+    // ... (other post entries)
+  ]
+}
+```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Components Overview
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 1. NavBar Component
 
-## Learn More
+- Creates the navigation bar containing the logo and course button, implemented in the ui component.
 
-To learn more about Next.js, take a look at the following resources:
+## 2. Profile Component
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Displays user information, including background image, profile image, username, followers, and bio.
+- Passes user information to the EngagementStats component.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 3. EngagementStats Component
 
-## Deploy on Vercel
+- Displays engagement statistics such as stars, likes, views, and hearts.
+- Receives user information from the Profile component.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 4. Posts Component
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Maps through the user's posts and renders a Post component for each.
+- Ensures that the post description remains identical.
+
+## 5. Post Component
+
+- Represents an individual post with details like title, description, thought type, author, date, read time, and views.
+
+## Styling
+
+The project uses styled components to style each component, ensuring a consistent and visually appealing design.
+
+# How to Run
+
+- Clone the repository.
+
+- Install dependencies: `npm install`.
+- Run the development server: `npm run dev`.
+  Open http://localhost:3000 in your browser to view the application.
+- Open http://localhost:3000 in your browser to view the application.
