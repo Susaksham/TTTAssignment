@@ -172,6 +172,7 @@ const Profile = ({ userDetails }) => {
                   display: "flex",
                   flexDirection: "column",
                   color: "#989898",
+                  gap: "0.1rem",
                 }}
               >
                 <FollowStatsItem>
@@ -184,6 +185,7 @@ const Profile = ({ userDetails }) => {
                   display: "flex",
                   flexDirection: "column",
                   color: "#989898",
+                  gap: "0.2rem",
                 }}
               >
                 <FollowStatsItem>
