@@ -11,7 +11,7 @@ export const PostContainer = styled.div`
   padding: 2rem 0.8rem;
   gap: 2rem;
   border-top: 1px solid #c5c5c5;
-  max-width: 48rem;
+  max-width: 100%;
   width: 100vw;
   @media (max-width: 280px) {
     padding: 1rem 0.4rem;

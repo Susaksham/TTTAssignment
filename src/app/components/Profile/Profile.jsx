@@ -9,7 +9,7 @@ export const ProfileContainer = styled.div`
   width: 100%;
   height: 50vh;
   position: relative;
-  margin-bottom: 1.5rem;
+  /* margin-bottom: 1.5rem; */
 `;
 export const ImageContainer = styled.div`
   width: 100%;
