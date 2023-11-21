@@ -142,10 +142,6 @@ const Post = ({
         ))}
       </Description>
 
-      {/* <div
-        style={{ fontSize: "14px", color: "#4e4e4e" }}
-        dangerouslySetInnerHTML={{ __html: description }}
-      ></div> */}
       <BottomInfo>
         <div style={{ display: "flex", gap: "0.15rem" }}>
           <BottomAuthorItem color="#3f9eed">{thought}</BottomAuthorItem>

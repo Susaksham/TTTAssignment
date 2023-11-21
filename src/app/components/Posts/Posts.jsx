@@ -16,28 +16,6 @@ export const PostsContainer = styled.div`
   border-top: 1px solid #c5c5c5;
 `;
 
-// export const TotalPost = styled.div`
-//   position: absolute;
-//   left: 0;
-// width: 30vw;
-// display: flex;
-// align-items: center;
-// justify-content: center;
-// border-top: 2px solid #c5c5c5;
-// border-right: 2px solid #c5c5c5;
-// top: calc(-3rem - 3.8px);
-// z-index: 10;
-// background-color: #ffffff;
-// padding: 1rem 1rem;
-// font-size: 1rem;
-// font-weight: 600;
-// color: #3f9eed;
-// @media (max-width: 280px) {
-//   font-size: 0.83rem;
-//   top: calc(-3rem - 0.1px);
-// }
-// `;
-
 export const TotalPost = styled.div`
   position: relative;
   top: 2px;

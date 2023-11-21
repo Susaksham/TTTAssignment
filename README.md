@@ -23,11 +23,14 @@ User information is fetched from the **user.json** file, populating the **userDe
 {
   "id": "1",
   "backgroundImage": {
-    "src": "/backgroundImage.jpg",
+    "src": "/assets/backgroundImage.jpg",
     "alt": "background image"
   },
-  "profileImage": { "src": "/profileImageSecond.jpeg", "alt": "profile image" },
-  "name": "Anuj Gosalia",
+  "profileImage": {
+    "src": "/assets/profilePicture.2cce0b6a.png",
+    "alt": "profile image"
+  },
+  "name": "Anuj gosalia",
   "followStats": {
     "followers": 6482,
     "following": 245
@@ -35,16 +38,16 @@ User information is fetched from the **user.json** file, populating the **userDe
   "bio": "Co-founder & CEO at Terribly Tiny Tales",
   "socialLink": "http://www.instagram.com/anujgosalia",
   "engagementStats": {
-    "stars": "1k",
-    "likes": "1.3k",
-    "views": "13k",
-    "hearts": "23k"
+    "stars": "125",
+    "likes": "12",
+    "views": "57.8k",
+    "hearts": "26.0k"
   },
   "posts": [
     {
       "id": 1,
       "title": "A Changing World Order",
-      "description": "The world is changing at a feverish pace. Friend, colleagues, and everyone engaged in knowledge work are beginning to sense this including.",
+      "description": "The world is changing at a feverish pace. Friend, collegues and everyone engaged in knowledge work are beginning to sense this including.",
       "thought": "musing",
       "author": "anujghosalia",
       "date": {
@@ -54,9 +57,35 @@ User information is fetched from the **user.json** file, populating the **userDe
       "readTime": 8,
       "views": 200
     },
-    // ... (other post entries)
+    {
+      "id": 2,
+      "title": "India Vs Australia",
+      "description": "Think about it - this cricket series was akin to therapy.\n\nLaying our childhood trauma up top, working with it slowly and slowly over two me",
+      "thought": "thought",
+      "author": "anujghosalia",
+      "date": {
+        "month": "January",
+        "day": 21
+      },
+      "readTime": 1,
+      "views": 156
+    },
+    {
+      "id": 3,
+      "title": "Write to build",
+      "description": "Writing is the first step to create:\n \n - stories\n - products\n - companies.",
+      "author": "anujghosalia",
+      "thought": "thought",
+      "date": {
+        "month": "November",
+        "day": 18
+      },
+      "readTime": 1,
+      "views": 228
+    }
   ]
 }
+
 ```
 
 ## Components Overview
