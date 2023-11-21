@@ -79,11 +79,11 @@ export const BottomInfo = styled.div`
 
 export const BottomAuthorItem = styled.span`
   font-size: 10px;
-  font-weight: 600;
+  font-weight: 800;
   color: ${(props) => (props.color ? props.color : "#4e4e4e")};
   @media (max-width: 280px) {
     font-size: 62.5%;
-    font-weight: 600;
+    font-weight: 800;
     color: #4e4e4e;
     color: ${(props) => (props.color ? props.color : "#4e4e4e")};
   }
@@ -145,7 +145,7 @@ const Post = ({
       <BottomInfo>
         <div style={{ display: "flex", gap: "0.15rem" }}>
           <BottomAuthorItem color="#3f9eed">{thought}</BottomAuthorItem>
-          <BottomAuthorItem>By</BottomAuthorItem>
+          <BottomAuthorItem>by</BottomAuthorItem>
           <BottomAuthorItem style={{}}>{author}</BottomAuthorItem>
         </div>
         <PostInfo>

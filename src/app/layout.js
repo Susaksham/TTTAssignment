@@ -1,7 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import StyledComponentsRegistry from "./registry";
-
+import Head from "next/head";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -13,11 +13,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head>
-        <link rel="icon" href="/favicon.svg" />
-      </head>
+      <Head>
+        <meta name="viewport" content="viewport-fit=cover" />
+      </Head>
+
       <StyledComponentsRegistry>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml"></link>
         <body className={inter.className}>{children}</body>
       </StyledComponentsRegistry>
     </html>
