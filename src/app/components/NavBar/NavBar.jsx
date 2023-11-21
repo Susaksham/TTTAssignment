@@ -14,6 +14,9 @@ export const Nav = styled.nav`
   @media (max-width: 280px) {
     padding: 1rem 1rem;
   }
+  @media (min-width: 1025px) {
+    padding: 1.2rem 5rem;
+  }
 `;
 
 export const LogoContainer = styled.div`
@@ -53,7 +56,11 @@ const NavBar = () => {
     <Nav>
       <LogoWrapper>
         <LogoContainer>
-          <Image src="/ttt (1).svg" fill={true} alt="Picture of the author" />
+          <Image
+            src="/assets/ttt.svg"
+            fill={true}
+            alt="Picture of the author"
+          />
         </LogoContainer>
         <LogoLine></LogoLine>
         <Heading>STORIES</Heading>

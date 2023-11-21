@@ -55,9 +55,13 @@ export const TotalPost = styled.div`
   font-size: 1rem;
   font-weight: 600;
   color: #3f9eed;
+  border-top-right-radius: 10px;
   @media (max-width: 280px) {
     font-size: 0.83rem;
     top: 2px;
+  }
+  @media (min-width: 1025px) {
+    font-size: 1.3rem;
   }
 `;
 const Posts = ({ posts }) => {

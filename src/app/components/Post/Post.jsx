@@ -3,7 +3,7 @@
 import React from "react";
 import styled from "styled-components";
 import Image from "next/image";
-import Like from "../../../../public/like.png";
+import Like from "../../../../public/assets/like.7b1152ae.png";
 export const PostContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -16,12 +16,15 @@ export const PostContainer = styled.div`
   @media (max-width: 280px) {
     padding: 1rem 0.4rem;
   }
+  @media (min-width: 1025px) {
+    padding: 2.5rem 5rem;
+  }
 `;
 
 export const LikeButton = styled.span`
   position: relative;
-  width: 1.4rem;
-  height: 1.4rem;
+  width: 1.1rem;
+  height: 1.1rem;
   @media (max-width: 280px) {
     width: 1rem;
     height: 1rem;
@@ -33,6 +36,10 @@ export const Title = styled.h2`
 
   @media (max-width: 280px) {
     font-size: 12px;
+  }
+  @media (min-width: 1025px) {
+    font-size: 1.5rem;
+    font-weight: 600;
   }
 `;
 
@@ -51,14 +58,23 @@ export const PostInfo = styled.div`
   font-size: 10px;
 `;
 export const Description = styled.div`
+  font-size: 0.9rem;
   @media (max-width: 280px) {
-    font-size: 12px;
+    font-size: 0.75rem;
+  }
+
+  @media (min-width: 1025px) {
+    font-size: 1.2rem;
   }
 `;
 export const BottomInfo = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media (min-width: 1025px) {
+    font-size: 1.3rem;
+  }
 `;
 
 export const BottomAuthorItem = styled.span`
@@ -71,6 +87,10 @@ export const BottomAuthorItem = styled.span`
     color: #4e4e4e;
     color: ${(props) => (props.color ? props.color : "#4e4e4e")};
   }
+
+  @media (min-width: 1025px) {
+    font-size: 0.9rem;
+  }
 `;
 export const BottomInfoItem = styled.span`
   font-size: 10px;
@@ -80,6 +100,9 @@ export const BottomInfoItem = styled.span`
     font-size: 72.5%;
     font-weight: 600;
     color: #4e4e4e;
+  }
+  @media (min-width: 1025px) {
+    font-size: 0.9rem;
   }
 `;
 const Post = ({
@@ -102,7 +125,12 @@ const Post = ({
       >
         <Title>{title}</Title>
         <LikeButton>
-          <Image src={Like} alt="like" fill={true} />
+          <Image
+            src={Like}
+            alt="like"
+            fill={true}
+            sizes="(max-width: 1400px) 10vw"
+          />
         </LikeButton>
       </div>
       <Description>

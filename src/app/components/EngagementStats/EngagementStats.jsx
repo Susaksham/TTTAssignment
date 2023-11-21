@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import Like from "../../../../public/like.png";
-import Heart from "../../../../public/heart.png";
-import Eye from "../../../../public/eye.png";
-import Star from "../../../../public/star.png";
+import Like from "../../../../public/assets/like.7b1152ae.png";
+import Heart from "../../../../public/assets/heart.cecd090a.png";
+import Eye from "../../../../public/assets/views.ac8ad84e.png";
+import Star from "../../../../public/assets/favourites.85074362.png";
 import Image from "next/image";
 
 const EngagementStatsStyle = styled.div`
@@ -13,15 +13,22 @@ const EngagementStatsStyle = styled.div`
   align-items: center;
   gap: 1rem;
   margin-top: 0.5rem;
+  @media (min-width: 1025px) {
+    gap: 2rem;
+  }
 `;
 
 const EngagementStatsImageContainer = styled.div`
   position: relative;
-  width: 1.2rem;
-  height: 1.2rem;
+  width: 1rem;
+  height: 1rem;
   @media (max-width: 280px) {
     width: 1rem;
     height: 1rem;
+  }
+  @media (min-width: 1025px) {
+    width: 1.5rem;
+    height: 1.5rem;
   }
 `;
 const EngagementStatsItem = styled.span`
@@ -29,15 +36,21 @@ const EngagementStatsItem = styled.span`
   align-items: center;
   justify-content: center;
   gap: 0.4rem;
-  font-size: 1rem;
+  font-size: 0.9rem;
   @media (max-width: 280px) {
-    font-size: 16px;
+    font-size: 1rem;
+  }
+  @media (min-width: 1025px) {
+    font-size: 1.5rem;
   }
 `;
 
 const EngagementStatsItemText = styled.span`
   @media (max-width: 280px) {
-    font-size: 12px;
+    font-size: 0.75rem;
+  }
+  @media (min-width: 1025px) {
+    font-size: 1.5rem;
   }
 `;
 function EngagementStats({ userDetails }) {

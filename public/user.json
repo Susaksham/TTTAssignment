@@ -1,10 +1,13 @@
 {
   "id": "1",
   "backgroundImage": {
-    "src": "/backgroundImage.jpg",
+    "src": "/assets/backgroundImage.jpg",
     "alt": "background image"
   },
-  "profileImage": { "src": "/profileImageSecond.jpeg", "alt": "profile image" },
+  "profileImage": {
+    "src": "/assets/profilePicture.2cce0b6a.png",
+    "alt": "profile image"
+  },
   "name": "Anuj gosalia",
   "followStats": {
     "followers": 6482,
@@ -13,16 +16,16 @@
   "bio": "Co-founder & CEO at Terribly Tiny Tales",
   "socialLink": "http://www.instagram.com/anujgosalia",
   "engagementStats": {
-    "stars": "1k",
-    "likes": "1.3k",
-    "views": "13k",
-    "hearts": "23k"
+    "stars": "125",
+    "likes": "12",
+    "views": "57.8k",
+    "hearts": "26.0k"
   },
   "posts": [
     {
       "id": 1,
       "title": "A Changing World Order",
-      "description": "The world is changing at a feverish pace. Friend , collegues and everyone engaged in knowledge work are beginning to sense this including.",
+      "description": "The world is changing at a feverish pace. Friend, collegues and everyone engaged in knowledge work are beginning to sense this including.",
       "thought": "musing",
       "author": "anujghosalia",
       "date": {

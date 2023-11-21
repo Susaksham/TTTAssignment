@@ -1,15 +1,18 @@
 import React from "react";
 import styled from "styled-components";
 import Image from "next/image";
-import Diamond from "../../../../public/diamond.png";
-import Approve from "../../../../public/approved.png";
+import Diamond from "../../../../public/assets/diamond.d5647e2f.png";
+import Approve from "../../../../public/assets/check.8bd88e93.png";
 import EngagementStats from "../EngagementStats/EngagementStats";
 export const ProfileWrapper = styled.main``;
 export const ProfileContainer = styled.div`
   width: 100%;
-  height: 50vh;
+  height: 45vh;
   position: relative;
-  /* margin-bottom: 1.5rem; */
+  margin-bottom: 1rem;
+  @media (min-width: 1025px) {
+    height: 80vh;
+  }
 `;
 export const ImageContainer = styled.div`
   width: 100%;
@@ -18,9 +21,13 @@ export const ImageContainer = styled.div`
   flex-direction: column;
   position: relative;
   height: 40%;
+
+  @media (min-width: 1025px) {
+    height: 50%;
+  }
 `;
 export const ProfileInfoContainer = styled.div`
-  height: 60%;
+  max-height: 60%;
   width: fit-content;
 
   position: absolute;
@@ -37,6 +44,15 @@ export const ProfileInfoContainer = styled.div`
     left: 4vw;
     top: 35%;
   }
+  @media (min-width: 1025px) {
+    left: 10vw;
+    top: 45%;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    min-width: 70%;
+    justify-content: space-between;
+  }
 `;
 
 export const ProfileImageContainer = styled.div`
@@ -50,12 +66,19 @@ export const ProfileImageContainer = styled.div`
   @media (max-width: 280px) {
     height: 10vh;
   }
+  @media (min-width: 1025px) {
+    height: 12vw;
+  }
 `;
 
 export const ProfileImageNameWrapper = styled.div`
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1rem;
+
+  @media (min-width: 1025px) {
+    gap: 2rem;
+  }
 `;
 export const ImageNameContainer = styled.div`
   display: flex;
@@ -63,12 +86,23 @@ export const ImageNameContainer = styled.div`
 
 export const MembershipIconsContainer = styled.div`
   position: relative;
-  width: 15px;
-  height: 15px;
+  width: 0.7rem;
+  height: 0.7rem;
   @media (max-width: 280px) {
-    width: 12px;
-    height: 12px;
+    width: 0.7rem;
+    height: 0.7rem;
   }
+  @media (min-width: 1025px) {
+    width: 1.3rem;
+    height: 1.3rem;
+  }
+`;
+
+export const FollowStatsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  color: "#989898";
+  gap: 0.2rem;
 `;
 export const FollowStats = styled.div`
   display: flex;
@@ -81,34 +115,69 @@ export const FollowStatsItem = styled.span`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1px 6px;
+  width: 3.5rem;
   font-weight: 500;
+  padding: 0.1rem;
+
+  @media (min-width: 1025px) {
+    font-size: 1.5rem;
+    padding: 0.1rem 2.5rem;
+  }
 `;
 
+export const FollowerStatsText = styled.span`
+  font-size: 0.625rem;
+
+  @media (min-width: 1025px) {
+    font-size: 1rem;
+  }
+`;
 export const UserInfo = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   position: relative;
   top: 1rem;
+
+  @media (min-width: 1025px) {
+    font-size: 1.5rem;
+  }
 `;
 
+export const UserName = styled.span`
+  font-size: 0.9rem;
+  font-weight: 600;
+  @media (min-width: 1025px) {
+    font-size: 1.5rem;
+  }
+`;
 export const AboutUser = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
+  position: relative;
+  @media (min-width: 1025px) {
+    font-size: 1.5rem;
+    top: 1rem;
+  }
 `;
 const ProfileSocialLinks = styled.a`
   text-decoration: none;
-  font-size: 12px;
+  font-size: 0.75rem;
   color: #3f9eed;
   cursor: pointer;
+  @media (min-width: 1025px) {
+    font-size: 1.5rem;
+  }
 `;
 export const Bio = styled.p`
   font-size: 0.9rem;
 
   @media (max-width: 280px) {
     font-size: 0.8rem;
+  }
+  @media (min-width: 1025px) {
+    font-size: 1.5rem;
   }
 `;
 const Profile = ({ userDetails }) => {
@@ -119,16 +188,16 @@ const Profile = ({ userDetails }) => {
           src={
             Object.keys(userDetails).length > 0
               ? userDetails?.backgroundImage?.src
-              : "/NO_IMAGE.jpg"
+              : "/assets/NO_IMAGE.jpg"
           }
           alt={
             Object.keys(userDetails).length > 0
               ? userDetails?.backgroundImage?.alt
               : "Image not Available"
           }
+          style={{ objectFit: "cover", objectPosition: "center" }}
           fill={true}
           sizes="(max-width: 1400px) 100vw"
-          priority={true}
         ></Image>
       </ImageContainer>
       <ProfileInfoContainer>
@@ -138,7 +207,7 @@ const Profile = ({ userDetails }) => {
               src={
                 Object.keys(userDetails).length > 0
                   ? userDetails?.profileImage?.src
-                  : "/no_profile_image.png"
+                  : "/assets/no_profile_image.png"
               }
               alt={
                 Object.keys(userDetails).length > 0
@@ -151,48 +220,42 @@ const Profile = ({ userDetails }) => {
           </ProfileImageContainer>
 
           <UserInfo>
-            <div style={{ display: "flex", alignItems: "center", gap: "2vw" }}>
-              <span style={{ fontSize: "1rem", fontWeight: "600" }}>
-                {userDetails?.name}
-              </span>
+            <div style={{ display: "flex", alignItems: "center", gap: "1vw" }}>
+              <UserName>{userDetails?.name}</UserName>
               <span
                 style={{ display: "flex", alignItems: "center", gap: "0.2rem" }}
               >
                 <MembershipIconsContainer>
-                  <Image src={Diamond} alt="diamond-member" fill={true} />
+                  <Image
+                    src={Diamond}
+                    alt="diamond-member"
+                    fill={true}
+                    sizes="(max-width: 1400px) 10vw"
+                  />
                 </MembershipIconsContainer>
                 <MembershipIconsContainer>
-                  <Image src={Approve} alt="approved-member" fill={true} />
+                  <Image
+                    src={Approve}
+                    alt="approved-member"
+                    fill={true}
+                    sizes="(max-width: 1400px) 10vw"
+                  />
                 </MembershipIconsContainer>
               </span>
             </div>
             <FollowStats>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  color: "#989898",
-                  gap: "0.1rem",
-                }}
-              >
+              <FollowStatsContainer>
                 <FollowStatsItem>
                   {userDetails?.followStats?.followers}
                 </FollowStatsItem>
-                <span style={{ fontSize: "10px" }}>Followers</span>
-              </div>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  color: "#989898",
-                  gap: "0.2rem",
-                }}
-              >
+                <FollowerStatsText>Followers</FollowerStatsText>
+              </FollowStatsContainer>
+              <FollowStatsContainer>
                 <FollowStatsItem>
                   {userDetails?.followStats?.following}
                 </FollowStatsItem>
-                <span style={{ fontSize: "10px" }}>Following</span>
-              </div>
+                <FollowerStatsText>Following</FollowerStatsText>
+              </FollowStatsContainer>
             </FollowStats>
           </UserInfo>
         </ProfileImageNameWrapper>
