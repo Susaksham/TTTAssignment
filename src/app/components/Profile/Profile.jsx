@@ -42,7 +42,7 @@ export const ProfileInfoContainer = styled.div`
 
   @media (max-width: 280px) {
     left: 4vw;
-    top: 35%;
+    top: 46%;
   }
   @media (min-width: 1025px) {
     left: 10vw;
