@@ -7,9 +7,9 @@ import EngagementStats from "../EngagementStats/EngagementStats";
 export const ProfileWrapper = styled.main``;
 export const ProfileContainer = styled.div`
   width: 100%;
-  height: 45vh;
+  height: 48vh;
   position: relative;
-  margin-bottom: 1rem;
+  margin-bottom: 5vw;
   @media (min-width: 1025px) {
     height: 80vh;
   }
@@ -20,10 +20,10 @@ export const ImageContainer = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
-  height: 40%;
+  height: 50%;
 
   @media (min-width: 1025px) {
-    height: 50%;
+    height: 60%;
   }
 `;
 export const ProfileInfoContainer = styled.div`
@@ -32,7 +32,7 @@ export const ProfileInfoContainer = styled.div`
 
   position: absolute;
   z-index: 100;
-  top: 33%;
+  top: 43%;
   left: 10vw;
   display: flex;
   flex-direction: column;
@@ -46,7 +46,7 @@ export const ProfileInfoContainer = styled.div`
   }
   @media (min-width: 1025px) {
     left: 10vw;
-    top: 45%;
+    top: 55%;
     flex-direction: row;
     align-items: center;
     gap: 2rem;
@@ -56,7 +56,7 @@ export const ProfileInfoContainer = styled.div`
 `;
 
 export const ProfileImageContainer = styled.div`
-  height: 15vh;
+  height: 14vh;
   aspect-ratio: 1/1;
   position: relative;
   overflow: hidden;
@@ -103,6 +103,7 @@ export const FollowStatsContainer = styled.div`
   flex-direction: column;
   color: "#989898";
   gap: 0.2rem;
+  align-items: center;
 `;
 export const FollowStats = styled.div`
   display: flex;
@@ -116,8 +117,9 @@ export const FollowStatsItem = styled.span`
   justify-content: center;
   align-items: center;
   width: 3.5rem;
-  font-weight: 500;
+  font-weight: 600;
   padding: 0.1rem;
+  color: #989898;
 
   @media (min-width: 1025px) {
     font-size: 1.5rem;
@@ -127,7 +129,7 @@ export const FollowStatsItem = styled.span`
 
 export const FollowerStatsText = styled.span`
   font-size: 0.625rem;
-
+  color: #989898;
   @media (min-width: 1025px) {
     font-size: 1rem;
   }
@@ -145,7 +147,7 @@ export const UserInfo = styled.div`
 `;
 
 export const UserName = styled.span`
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 600;
   @media (min-width: 1025px) {
     font-size: 1.5rem;
