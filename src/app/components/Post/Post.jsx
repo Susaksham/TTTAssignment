@@ -59,12 +59,15 @@ export const PostInfo = styled.div`
 `;
 export const Description = styled.div`
   font-size: 0.9rem;
+  line-height: 1.5rem;
   @media (max-width: 280px) {
     font-size: 0.75rem;
+    line-height: 1.5rem;
   }
 
   @media (min-width: 1025px) {
     font-size: 1.2rem;
+    line-height: 2.5rem;
   }
 `;
 export const BottomInfo = styled.div`

@@ -13,7 +13,6 @@ export const PostsContainer = styled.div`
   flex-direction: column;
   align-items: start;
   width: 100%;
-  border-top: 1px solid #c5c5c5;
 `;
 
 export const TotalPost = styled.div`
@@ -24,8 +23,8 @@ export const TotalPost = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  border-top: 2px solid #c5c5c5;
-  border-right: 2px solid #c5c5c5;
+  border-top: 1px solid #c5c5c5;
+  border-right: 1px solid #c5c5c5;
 
   z-index: 10;
   background-color: #ffffff;
@@ -33,7 +32,7 @@ export const TotalPost = styled.div`
   font-size: 1rem;
   font-weight: 600;
   color: #3f9eed;
-  border-top-right-radius: 10px;
+  border-top-right-radius: 5px;
   @media (max-width: 280px) {
     font-size: 0.83rem;
     top: 2px;
