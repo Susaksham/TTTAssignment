@@ -9,9 +9,12 @@ export const ProfileContainer = styled.div`
   width: 100%;
   height: 48vh;
   position: relative;
-  margin-bottom: 5vw;
+  margin-bottom: 0.4rem;
   @media (min-width: 1025px) {
     height: 80vh;
+  }
+  @media (max-width: 400px) {
+    margin-bottom: 2rem;
   }
 `;
 export const ImageContainer = styled.div`
@@ -149,6 +152,7 @@ export const UserInfo = styled.div`
 export const UserName = styled.span`
   font-size: 1rem;
   font-weight: 600;
+  font-family: "Fira Sans", sans-serif;
   @media (min-width: 1025px) {
     font-size: 1.5rem;
   }
@@ -174,6 +178,7 @@ const ProfileSocialLinks = styled.a`
 `;
 export const Bio = styled.p`
   font-size: 0.9rem;
+  font-family: "Fira Sans", sans-serif;
 
   @media (max-width: 280px) {
     font-size: 0.8rem;

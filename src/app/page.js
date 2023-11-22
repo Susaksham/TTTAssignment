@@ -1,10 +1,10 @@
 "use client";
 import { useState, useEffect } from "react";
-import Image from "next/image";
 
 import NavBar from "./components/NavBar/NavBar.jsx";
 import Posts from "./components/Posts/Posts";
 import Profile from "./components/Profile/Profile";
+import LoadingPage from "./components/Loading/LoadingPage.jsx";
 
 export default function Home() {
   const [userDetails, setUserDetails] = useState({});
@@ -30,8 +30,12 @@ export default function Home() {
   return (
     <main>
       <NavBar></NavBar>
-      <Profile userDetails={userDetails}></Profile>
-      {userDetails?.posts && <Posts posts={userDetails?.posts}></Posts>}
+
+      {!loading && <Profile userDetails={userDetails}></Profile>}
+      {!loading && userDetails?.posts && (
+        <Posts posts={userDetails?.posts}></Posts>
+      )}
+      {loading && <LoadingPage></LoadingPage>}
     </main>
   );
 }

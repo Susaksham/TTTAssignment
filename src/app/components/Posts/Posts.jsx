@@ -25,6 +25,7 @@ export const TotalPost = styled.div`
   justify-content: center;
   border-top: 1px solid #c5c5c5;
   border-right: 1px solid #c5c5c5;
+  font-family: "Fira Sans", sans-serif;
 
   z-index: 10;
   background-color: #ffffff;

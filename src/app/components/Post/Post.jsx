@@ -33,7 +33,7 @@ export const LikeButton = styled.span`
 export const Title = styled.h2`
   font-size: 16px;
   font-weight: 800;
-
+  font-family: "Fira Sans", sans-serif;
   @media (max-width: 280px) {
     font-size: 12px;
   }
@@ -60,6 +60,7 @@ export const PostInfo = styled.div`
 export const Description = styled.div`
   font-size: 0.9rem;
   line-height: 1.5rem;
+  font-family: "Fira Sans", sans-serif;
   @media (max-width: 280px) {
     font-size: 0.75rem;
     line-height: 1.5rem;
@@ -74,7 +75,6 @@ export const BottomInfo = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   @media (min-width: 1025px) {
     font-size: 1.3rem;
   }
@@ -83,6 +83,7 @@ export const BottomInfo = styled.div`
 export const BottomAuthorItem = styled.span`
   font-size: 10px;
   font-weight: 800;
+  font-family: "Fira Sans", sans-serif;
   color: ${(props) => (props.color ? props.color : "#4e4e4e")};
   @media (max-width: 280px) {
     font-size: 62.5%;
@@ -99,6 +100,7 @@ export const BottomInfoItem = styled.span`
   font-size: 10px;
   font-weight: 600;
   color: "#4e4e4e";
+  font-family: "Fira Sans", sans-serif;
   @media (max-width: 280px) {
     font-size: 72.5%;
     font-weight: 600;
