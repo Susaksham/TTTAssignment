@@ -1,7 +1,7 @@
 {
   "id": "1",
   "backgroundImage": {
-    "src": "/assets/backgroundImage.jpg",
+    "src": "/assets/backgroundImage.webp",
     "alt": "background image"
   },
   "profileImage": {

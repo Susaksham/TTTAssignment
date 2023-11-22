@@ -23,14 +23,14 @@ User information is fetched from the **user.json** file, populating the **userDe
 {
   "id": "1",
   "backgroundImage": {
-    "src": "/assets/backgroundImage.jpg",
+    "src": "/assets/backgroundImage.webp",
     "alt": "background image"
   },
   "profileImage": {
     "src": "/assets/profilePicture.2cce0b6a.png",
     "alt": "profile image"
   },
-  "name": "Anuj gosalia",
+  "name": "Anuj Gosalia",
   "followStats": {
     "followers": 6482,
     "following": 245
@@ -49,7 +49,7 @@ User information is fetched from the **user.json** file, populating the **userDe
       "title": "A Changing World Order",
       "description": "The world is changing at a feverish pace. Friend, collegues and everyone engaged in knowledge work are beginning to sense this including.",
       "thought": "musing",
-      "author": "anujghosalia",
+      "author": "anujgosalia",
       "date": {
         "month": "August",
         "day": 2
@@ -62,7 +62,7 @@ User information is fetched from the **user.json** file, populating the **userDe
       "title": "India Vs Australia",
       "description": "Think about it - this cricket series was akin to therapy.\n\nLaying our childhood trauma up top, working with it slowly and slowly over two me",
       "thought": "thought",
-      "author": "anujghosalia",
+      "author": "anujgosalia",
       "date": {
         "month": "January",
         "day": 21
@@ -74,7 +74,7 @@ User information is fetched from the **user.json** file, populating the **userDe
       "id": 3,
       "title": "Write to build",
       "description": "Writing is the first step to create:\n \n - stories\n - products\n - companies.",
-      "author": "anujghosalia",
+      "author": "anujgosalia",
       "thought": "thought",
       "date": {
         "month": "November",
